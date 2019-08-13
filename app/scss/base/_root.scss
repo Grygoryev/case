@@ -1,0 +1,22 @@
+* {
+  box-sizing: border-box;
+  font-family: $font-family;
+}
+
+body,
+ul, li,
+p,
+figure, figcaption,
+fieldset, legend,
+picture,
+h1, h2, h3 {
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-shadow: none;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: #797979;
+}

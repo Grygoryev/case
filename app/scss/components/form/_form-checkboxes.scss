@@ -1,0 +1,68 @@
+.form-checkboxes {
+  
+  &__checkboxes {
+    @include flex(space-between, flex-start, row wrap);
+  }
+
+  &__check-box {
+    @include flex(flex-start, flex-start, column nowrap);
+    
+    position: relative;
+    cursor: pointer;
+    margin-bottom: 20px;
+    padding-left: 30px;
+    width: 100%;
+
+    @include respond-min($tablet) {
+      flex-direction: row;
+      max-width: 33.3%;
+    }
+  }
+
+  &__input-title {
+    @include font(16px, $fw-semi-bold, 1);
+
+    @include respond-min($tablet) {
+      font-size: 21px;
+    }
+
+    &::selection {
+      background: transparent;
+    }
+  }
+
+  &__input {
+    visibility: hidden;
+    width: 0;
+    display: none;
+
+    &:checked + .form-checkboxes__checkmark::after {
+      display: block;
+    }
+  }
+
+  &__checkmark {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+
+    &::before {
+      content: url(#{$imgPath}checkbox_empty.png);
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0;
+    }
+
+    &::after {
+      display: none;
+      content: url(#{$imgPath}checkmark.png);
+      position: absolute;
+      top: calc(50% - 5px);
+      transform: translateY(-50%);
+      left: 3px;
+    }
+  }
+}

@@ -1,0 +1,49 @@
+.form-header {
+  position: relative;
+
+  @include respond-min($tablet) {
+    padding-top: 92px;
+  }
+
+  &__logo {
+    width: 175px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+
+    @include respond-min($tablet) {
+      width: auto;
+    }
+  }
+
+  &__firm-logo {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    @include respond-min($tablet) {
+      display: block;
+    }
+  }
+
+  &__secret-label {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    max-width: 250px;
+    display: none;
+
+    @include respond-min($tablet) {
+      display: block;
+      right: 0;
+      top: -20px;
+    }
+
+    @include respond-min($desktop-small) {
+      right: -62px;
+      top: -20px;
+    }
+  }
+}

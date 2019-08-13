@@ -1,0 +1,84 @@
+.form-slider {
+    padding-bottom: 120px;
+
+    @include respond-min($tablet) {
+      padding-bottom: 80px;
+    }
+}
+
+.js-form-slider {
+  position: relative;
+  background-image: url('#{$imgPath}js-scale-ground.png');
+  height: 30px;
+  width: 100%;
+  cursor: pointer;
+
+  &__input {
+    display: none;
+  }
+
+  &__weathercock {
+    position: absolute;
+    bottom: 5px;
+    left: calc(25% - 6px); // minus half of weathercock width, not the best solution, TODO: refactor
+    width: 15px;
+    height: 15px;
+    background-image: url('#{$imgPath}js-scale-weathercock.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    transition: 300ms all;
+
+
+    &.js--active {
+      transform: scale(1.5);
+    }
+  }
+
+  &__mark {
+    position: absolute;
+    bottom: -19px;
+    width: 3px;
+    height: 19px;
+    background-image: url('#{$imgPath}js-scale-mark.png');
+
+    /***modifiers***/
+    &_short {
+      height: 12px;
+      bottom: -12px;
+    }
+
+    &_beginner {
+      left: 0;
+    }
+
+    &_middle {
+      left: 25%;
+    }
+
+    &_higher {
+      left: 55%;
+    }
+
+    &_god {
+      right: 0;
+
+      .js-form-slider__mark-description {
+        right: 0;
+        left: auto;
+        text-align: right;
+      }
+    }
+  }
+
+  &__mark-description {
+    @include font(13px, $fw-bold, 1.5);
+
+    position: absolute;
+    top: 20px;
+    left: 0;
+
+    @include respond-min($tablet) {
+      min-width: 172px;
+    }
+  }
+}

@@ -1,0 +1,53 @@
+.form-general {
+
+  &__line {
+    width: 100%;
+
+    @include respond-min($tablet) {
+      @include flex(flex-start, center, row nowrap);
+    }
+  }
+
+  &__line-title {
+    @include font(16px, $fw-bold, 1);
+
+    color: $color-text-general;
+    margin-bottom: 10px;
+
+    @include respond-min($tablet) {
+      @include font(22px, $fw-bold, 1);
+
+      margin-right: 20px;
+      margin-bottom: 0;
+      flex-shrink: 0;
+      flex-grow: 0;
+    }
+  }
+
+  &__input-box {
+    position: relative;
+    flex-grow: 1;
+    margin-bottom: 20px;
+
+    @include respond-min($tablet) {
+      margin-bottom: 0;
+    }
+
+    &::after {
+      content: '';
+      height: 43px;
+      width: calc(100% + 15px);
+      position: absolute;
+      bottom: -25px;
+      left: -15px;
+      background-image: url('#{$imgPath}input_underline.png');
+      background-size: cover;
+
+      @include respond-min($tablet) {
+        height: 43px;
+        width: calc(100% + 25px);
+        bottom: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,63 @@
+.form-common-title {
+  @include font(18px, $fw-bold, 1);
+
+  margin-bottom: 10px;
+  color: #2f1b15;
+
+  @include respond-min($tablet) {
+    @include font(24px, $fw-bold, 1);
+  }
+}
+
+.form-common-description {
+  @include font(13px, $fw-normal, 20px);
+
+  margin-bottom: 30px;
+  color: #3d3d3d;
+
+  @include respond-min($tablet) {
+    @include font(15px, $fw-normal, 23px);
+  }
+}
+ 
+.form-common-input-box {
+  position: relative;
+  flex-grow: 1;
+
+  @include respond-min($tablet) {
+    padding-bottom: 10px;
+  }
+
+  &::after {
+    content: '';
+    height: 43px;
+    width: calc(100% + 25px);
+    position: absolute;
+    bottom: 0;
+    left: -15px;
+    background-image: url('#{$imgPath}input_underline.png');
+    background-size: cover;
+  }
+}
+
+.form-common-input {
+  @include font(18px, $fw-light, 1, $font-courier);
+  color: #231f20;
+  width: 100%;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  box-shadow: none;
+  padding-left: 10px;
+  padding-right: 10px;
+
+@include respond-min($tablet) {
+  font-size: 30px;
+  padding-left: 15px;
+  padding-bottom: 15px;
+}
+
+&::placeholder {
+  color: currentColor;
+}
+}

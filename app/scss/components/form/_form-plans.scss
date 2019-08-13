@@ -1,0 +1,58 @@
+.form-plans {
+
+  &__plans-list {
+    @include respond-min($tablet) {
+      @include flex(flex-start, flex-start, row wrap);
+    }
+  }
+
+  &__plan {
+    @include flex();
+    @include font(15px, $fw-bold, 20px);
+
+    position: relative;
+    padding-left: 33px;
+    margin-right: 20px;
+    margin-bottom: 15px;
+    cursor: pointer;
+
+    @include respond-min($tablet) {
+      @include font(20px, $fw-bold, 25px);
+
+      margin-bottom: auto;
+    }
+  }
+
+  &__input {
+    display: none;
+
+    &:checked + .form-plans__checkmark::after {
+      display: block;
+    }
+  }
+
+  &__checkmark {
+    position: absolute;
+    left: 0;
+    top: 50%;
+
+    &::before {
+      content: url('#{$imgPath}radiobutton_empty.png');
+      background-size: 100%;
+      position: absolute;
+      left: -8px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &::after {
+      position: absolute;
+      top: calc(50% + 4px);
+      left: 1px;
+      transform: translateY(-50%);
+      content: url('#{$imgPath}radiobutton_checkmark.png');
+      background-size: 100%;
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+@mixin flex($jc: flex-start, $ai: flex-start, $ff: row nowrap) {
+  display: flex;
+  justify-content: $jc;
+  align-items: $ai;
+  flex-flow: $ff;
+}
+
+@mixin font($fs, $fw: $fw-normal, $lh: 1, $ff: $font-family) {
+  font-size: $fs;
+  line-height: $lh;
+  font-weight: $fw;
+  font-family: $ff;
+}
+
+@mixin respond-min($screen-width) {
+  @media (min-width: $screen-width) {
+    @content
+  }
+}

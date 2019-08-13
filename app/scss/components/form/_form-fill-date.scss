@@ -1,0 +1,34 @@
+.form-fill-date {
+  padding-top: 40px;
+
+  @include respond-min($tablet) {
+    padding-top: 75px; 
+  }
+
+  &__label {
+    @include flex(flex-start, flex-end, row wrap);
+  }
+
+  &__label-title {
+    margin-right: 10px;
+  }
+
+  &__input-box {
+    &::after {
+      bottom: -25px;
+      height: 55px;
+      max-width: 235px;
+      width: 100%;
+
+      @include respond-min($tablet) {
+        bottom: -15px;
+      }
+    }
+  }
+
+  &__input {
+    width: inherit;
+    padding-bottom: 5px;
+    max-width: 215px;
+  }
+}
